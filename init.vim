@@ -66,8 +66,12 @@ nnoremap tl :tabnext<CR>
 nnoremap td :tabclose<CR>
 " open current buffer in new tab
 nnoremap t<Space> :tab split<CR>
+" quick switch last buffer
+nnoremap <leader>b :b#<CR>
 " vim-test
 nmap <silent> <leader>t :TestNearest<CR>
+nmap <leader>T :TestFile<CR>
+nmap <leader>r :TestLast<CR>
 " neoterm
 nmap <silent> TT :Topen<CR><C-w>bi
 nmap <silent> Tt :Tclose<CR>
