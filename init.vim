@@ -1,30 +1,47 @@
-" PLUGINS - run :PlugInstall to install plugins
+set nocompatible
+
+" ###############
+"    VIM-PLUG 
+" ###############
+
+" run :PlugInstall to install plugins
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 
-Plug 'vim-airline/vim-airline'
-
-Plug 'elixir-lang/vim-elixir', { 'for' : 'elixir' }
-Plug 'slashmili/alchemist.vim', { 'for' : 'elixir' }
-
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'
 
+Plug 'vim-airline/vim-airline'
+
+Plug 'elixir-lang/vim-elixir', { 'for' : 'elixir' }
+" Plug 'slashmili/alchemist.vim', { 'for' : 'elixir' }
+
 call plug#end()
 
-set nocompatible
+" ###############
+"      SETUP
+" ###############
+
 set expandtab
 set showmatch
 set number
 syntax on
+
 " Use bad colors until 24-bit comes to Win10 Bash
 :color ron
+
 " tab completion for files in path recursively
 set path+=**
 set wildmenu
 
-" CUSTOM MAPPINGS
+let test#strategy = 'neoterm'
+" let test#filename_modifier = ':p'
+
+" ###############
+"    MAPPINGS
+" ###############
 
 let mapleader = ","
 " Command Mode
