@@ -29,8 +29,7 @@ set showmatch
 set number
 syntax on
 
-" Use bad colors until 24-bit comes to Win10 Bash
-:color ron
+colorscheme molokai
 
 " tab completion for files in path recursively
 set path+=**
