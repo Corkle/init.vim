@@ -1,4 +1,11 @@
+if (empty($TMUX))
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 set nocompatible
+set mouse=r
 
 " ###############
 "    VIM-PLUG 
@@ -29,7 +36,8 @@ set showmatch
 set number
 syntax on
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme onedark
 
 " tab completion for files in path recursively
 set path+=**
@@ -45,6 +53,7 @@ let test#strategy = 'neoterm'
 let mapleader = ","
 " Command Mode
 nnoremap ; :
+set pastetoggle=<F3>
 " NerdTree
 nmap <C-n> :NERDTreeToggle<CR>
 " Window Focus
