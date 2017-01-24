@@ -1,7 +1,5 @@
-if (empty($TMUX))
-  if (has("termguicolors"))
-    set termguicolors
-  endif
+if (has("termguicolors"))
+  set termguicolors
 endif
 
 set nocompatible
@@ -20,7 +18,7 @@ Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'kassio/neoterm'
 Plug 'janko-m/vim-test'
 
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 
 Plug 'elixir-lang/vim-elixir', { 'for' : 'elixir' }
 " Plug 'slashmili/alchemist.vim', { 'for' : 'elixir' }
@@ -34,9 +32,14 @@ call plug#end()
 set expandtab
 set showmatch
 set number
-syntax on
+syntax on 
 
-" colorscheme molokai
+let g:onedark_termcolors=256
+let g:lightline= {
+  \ 'colorscheme': 'onedark',
+  \ }
+
+"colorscheme molokai
 colorscheme onedark
 
 " tab completion for files in path recursively
@@ -53,6 +56,9 @@ let test#strategy = 'neoterm'
 let mapleader = ","
 " Command Mode
 nnoremap ; :
+" Undo
+nnoremap U u
+nnoremap u <NOP>
 set pastetoggle=<F3>
 " NerdTree
 nmap <C-n> :NERDTreeToggle<CR>
