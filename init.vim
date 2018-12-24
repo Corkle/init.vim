@@ -22,6 +22,9 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'elixir-lang/vim-elixir', { 'for' : 'elixir' }
 " Plug 'slashmili/alchemist.vim', { 'for' : 'elixir' }
+Plug 'pangloss/vim-javascript'
+
+Plug 'guns/vim-clojure-static'
 
 call plug#end()
 
@@ -29,10 +32,13 @@ call plug#end()
 "      SETUP
 " ###############
 
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set showmatch
 set number
 syntax on 
+filetype plugin indent on
 
 let g:onedark_termcolors=256
 let g:lightline= {
