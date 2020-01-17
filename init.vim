@@ -9,9 +9,14 @@ set mouse=r
 "    VIM-PLUG 
 " ###############
 
-" run :PlugInstall to install plugins
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
 call plug#begin('~/.local/share/nvim/plugged')
+
+" run :PlugInstall to install plugins
 
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 
@@ -93,7 +98,7 @@ nmap <silent> <leader>t :TestNearest<CR>
 nmap <leader>T :TestFile<CR>
 nmap <leader>r :TestLast<CR>
 " neoterm
-nmap <silent> TT :Topen<CR><C-w>bi
-nmap <silent> Tt :Tclose<CR>
+nmap <silent> TT :bot 1Topen<CR><C-w>bi
+nmap <silent> Tt :1Ttoggle<CR>
 
 
